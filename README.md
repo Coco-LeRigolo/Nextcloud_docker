@@ -18,7 +18,6 @@ Tout le projet est orchestré avec **Docker Compose**, et repose sur :
 
 ## 📐 Architecture des services
 
-```
 
 +------------+ +------------------+
 | Nextcloud | <--> | MariaDB |
