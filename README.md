@@ -20,17 +20,17 @@ Tout le projet est orchestré avec **Docker Compose**, et repose sur :
 
 ```
 
-+------------+      +------------------+
-\|  Nextcloud | <--> |     MariaDB       |
-+------------+      +------------------+
++------------+ +------------------+
+| Nextcloud | <--> | MariaDB |
++------------+ +------------------+
 |
 v
 +------------+
-\|   Adminer  |
+| Adminer |
 +------------+
 
 +------------+
-\| Watchtower |
+| Watchtower |
 +------------+
 
 ```
