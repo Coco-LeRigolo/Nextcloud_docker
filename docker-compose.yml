@@ -1,0 +1,76 @@
+services:
+  db:
+    image: mariadb:11
+    container_name: nextcloud_db
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - cloudnet
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "com.example.project=nextcloud_project"
+      - "com.example.maintainer=tonpseudo"
+
+  nextcloud:
+    build: ./nextcloud
+    container_name: nextcloud_app
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - nextcloud_data:/var/www/html
+    networks:
+      - cloudnet
+    labels:
+      - "com.example.project=nextcloud_project"
+      - "com.example.maintainer=tonpseudo"
+
+  adminer:
+    image: adminer
+    container_name: nextcloud_adminer
+    restart: always
+    ports:
+      - "8081:8080"
+    networks:
+      - cloudnet
+    depends_on:
+      - db
+    labels:
+      - "com.example.project=nextcloud_project"
+      - "com.example.maintainer=tonpseudo"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: nextcloud_watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - cloudnet
+    labels:
+      - "com.example.project=nextcloud_project"
+      - "com.example.maintainer=tonpseudo"
+
+volumes:
+  db_data:
+  nextcloud_data:
+
+networks:
+  cloudnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
