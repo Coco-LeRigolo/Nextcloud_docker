@@ -128,6 +128,19 @@ Le champ **Hôte** doit impérativement être `db` (nom du service Docker Compos
 
 Une fois ces informations renseignées, cliquer sur **Terminer l’installation**.
 
+📥 Connexion à Adminer
+
+Accède à Adminer via http://localhost:8081
+
+Renseigner les champs :
+Champ	Valeur
+Système	MySQL
+Serveur	db
+Utilisateur	nextclouduser
+Mot de passe	celui défini dans .env sous MYSQL_PASSWORD
+Base de données	nextcloud
+Puis cliquer sur Connexion.
+
 ---
 
 ## 📊 Fonctionnalités avancées
