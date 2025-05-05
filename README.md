@@ -1,9 +1,7 @@
-Bien sûr ! Voici le **README.md complet en script**, prêt à être copié directement dans ton projet :
-
 ```markdown
-# 📦 Projet Nextcloud en Docker Compose
+# Projet Nextcloud en Docker Compose
 
-## 📑 Description
+## Description
 
 Ce projet met en place un mini-cloud personnel basé sur **Nextcloud**, accompagné d’une base de données **MariaDB**, d’un outil d’administration de la base de données **Adminer** et d’un conteneur **Watchtower** pour la mise à jour automatique des images Docker.
 
@@ -16,7 +14,7 @@ Tout le projet est orchestré avec **Docker Compose**, et repose sur :
 
 ---
 
-## 📐 Architecture des services
+## Architecture des services
 
 
 +------------+ +------------------+
@@ -36,7 +34,7 @@ v
 
 ---
 
-## 📦 Services inclus
+## Services inclus
 
 | Service    | Description                          | Port d’accès  |
 |------------|--------------------------------------|---------------|
@@ -47,7 +45,7 @@ v
 
 ---
 
-## 📂 Structure du projet
+## Structure du projet
 
 ```
 
@@ -64,14 +62,14 @@ v
 
 ---
 
-## ⚙️ Installation & utilisation
+## Installation & utilisation
 
-### 1️⃣ Prérequis :
+### 1️ Prérequis :
 - Docker
 
 ---
 
-### 2️⃣ Cloner le projet
+### 2️ Cloner le projet
 
 ```bash
 git clone https://github.com/tonpseudo/Nextcloud-docker.git
@@ -80,7 +78,7 @@ cd Nextcloud-docker
 
 ---
 
-### 3️⃣ Configurer les variables d’environnement
+### 3️ Configurer les variables d’environnement
 
 Modifier le fichier `.env` :
 
@@ -93,7 +91,7 @@ MYSQL_USER=nextclouduser
 
 ---
 
-### 4️⃣ Lancer les services
+### 4️ Lancer les services
 
 ```bash
 docker-compose up -d --build
@@ -101,14 +99,14 @@ docker-compose up -d --build
 
 ---
 
-### 5️⃣ Accéder aux services
+### 5️ Accéder aux services
 
-* 🌐 Nextcloud : [http://localhost:8080](http://localhost:8080)
-* 🌐 Adminer : [http://localhost:8081](http://localhost:8081)
+* Nextcloud : [http://localhost:8080](http://localhost:8080)
+* Adminer : [http://localhost:8081](http://localhost:8081)
 
 ---
 
-### 6️⃣ Configuration de Nextcloud
+### 6️ Configuration de Nextcloud
 
 Lors de la première connexion à **[http://localhost:8080](http://localhost:8080)**, il faut compléter la configuration :
 
@@ -118,42 +116,42 @@ Lors de la première connexion à **[http://localhost:8080](http://localhost:808
 | Champ                       | Valeur                                            |
 | :-------------------------- | :------------------------------------------------ |
 | **Type de base de données** | `MySQL/MariaDB`                                   |
-| **Identifiant**             | `ncuser`                                          |
+| **Identifiant**             | `nextclouduser`                                   |
 | **Mot de passe**            | celui renseigné dans `.env` sous `MYSQL_PASSWORD` |
 | **Nom de la base**          | `nextcloud`                                       |
 | **Hôte**                    | `db`                                              |
 
-⚠️ **Important** :
+⚠ **Important** :
 Le champ **Hôte** doit impérativement être `db` (nom du service Docker Compose) et non `localhost`.
 
 Une fois ces informations renseignées, cliquer sur **Terminer l’installation**.
 
-📥 Connexion à Adminer
+### 7 Connexion à Adminer
 
-Accède à Adminer via http://localhost:8081
+Accède à Adminer via **[http://localhost:8081](http://localhost:8081)**
 
-Renseigner les champs :
-Champ	Valeur
-Système	MySQL
-Serveur	db
-Utilisateur	nextclouduser
-Mot de passe	celui défini dans .env sous MYSQL_PASSWORD
-Base de données	nextcloud
+| Champ                       | Valeur                                            |
+| :-------------------------- | :------------------------------------------------ |
+| **Type de base de données** | `MySQL/MariaDB`                                   |
+| **Serveur**                 | `db`                                              |
+| **Utilisateur**             | `nextclouduser`                                   |
+| **Mot de passe**            | celui renseigné dans `.env` sous `MYSQL_PASSWORD` |
+| **Base de données**         | `nextcloud`                                       |
 Puis cliquer sur Connexion.
 
 ---
 
-## 📊 Fonctionnalités avancées
+## Fonctionnalités avancées
 
-* ✅ **Volumes nommés** pour persister les données MariaDB et Nextcloud.
-* ✅ **Réseau bridge personnalisé** (`cloudnet`) avec sous-réseau dédié.
-* ✅ **Healthcheck** sur la base MariaDB pour contrôler son état.
-* ✅ **Labels** pour faciliter la gestion et la documentation des conteneurs.
-* ✅ **Watchtower** qui surveille et met à jour automatiquement les conteneurs.
+*  **Volumes nommés** pour persister les données MariaDB et Nextcloud.
+*  **Réseau bridge personnalisé** (`cloudnet`) avec sous-réseau dédié.
+*  **Healthcheck** sur la base MariaDB pour contrôler son état.
+*  **Labels** pour faciliter la gestion et la documentation des conteneurs.
+*  **Watchtower** qui surveille et met à jour automatiquement les conteneurs.
 
 ---
 
-## 📄 Commandes utiles
+## Commandes utiles
 
 Afficher les logs d’un service :
 
