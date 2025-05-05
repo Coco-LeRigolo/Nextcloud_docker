@@ -68,15 +68,14 @@ v
 
 ### 1️⃣ Prérequis :
 - Docker
-- Docker Compose
 
 ---
 
 ### 2️⃣ Cloner le projet
 
 ```bash
-git clone https://github.com/tonpseudo/nextcloud-docker-compose.git
-cd nextcloud-docker-compose
+git clone https://github.com/tonpseudo/Nextcloud-docker.git
+cd Nextcloud-docker
 ````
 
 ---
@@ -146,38 +145,17 @@ Une fois ces informations renseignées, cliquer sur **Terminer l’installation*
 Afficher les logs d’un service :
 
 ```bash
-docker-compose logs -f nextcloud
+docker compose logs -f nextcloud
 ```
 
 Arrêter et supprimer les services :
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 Lister les conteneurs :
 
 ```bash
 docker ps
-```
-
----
-
-## 📜 Auteur
-
-Projet réalisé par **[Ton Prénom NOM](https://github.com/tonpseudo)** dans le cadre du cours de virtualisation et conteneurisation.
-
----
-
-## 📝 Licence
-
-Ce projet est sous licence **MIT**.
-Libre de le réutiliser et de le modifier.
-
-```
-
----
-
-**Tu peux maintenant copier-coller ce README directement dans ton dépôt Git !**  
-Si tu veux une aide supplémentaire sur un autre aspect du projet, fais-moi signe 🙂
 ```
