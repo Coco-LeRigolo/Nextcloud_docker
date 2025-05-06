@@ -1,0 +1,5 @@
+# Docker volumes & fichiers système
+db_data/
+nextcloud_data/
+.env
+*.DS_Store
