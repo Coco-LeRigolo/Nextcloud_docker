@@ -1,4 +1,4 @@
-```markdown
+
 # Projet Nextcloud en Docker Compose
 
 ## Description
@@ -13,7 +13,7 @@ Tout le projet est orchestré avec **Docker Compose**, et repose sur :
 - Des directives avancées comme des **healthchecks** et des **labels**.
 
 ---
-
+```
 ## Architecture des services
 
 
