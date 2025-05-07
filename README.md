@@ -73,7 +73,7 @@ v
 
 ```bash
 git clone https://github.com/Coco-LeRigolo/Nextcloud_docker.git
-cd Nextcloud-docker
+cd Nextcloud_docker
 ````
 
 ---
