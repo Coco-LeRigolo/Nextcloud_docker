@@ -137,6 +137,7 @@ Accède à Adminer via **[http://localhost:8081](http://localhost:8081)**
 | **Utilisateur**             | `nextclouduser`                                   |
 | **Mot de passe**            | celui renseigné dans `.env` sous `MYSQL_PASSWORD` |
 | **Base de données**         | `nextcloud`                                       |
+
 Puis cliquer sur Connexion.
 
 ---
