@@ -72,7 +72,7 @@ v
 ### 2️ Cloner le projet
 
 ```bash
-git clone https://github.com/tonpseudo/Nextcloud-docker.git
+git clone https://github.com/Coco-LeRigolo/Nextcloud_docker.git
 cd Nextcloud-docker
 ````
 
@@ -94,7 +94,7 @@ MYSQL_USER=nextclouduser
 ### 4️ Lancer les services
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ---
